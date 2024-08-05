@@ -1,7 +1,6 @@
 console.log("I am popup.js");
 
 const button = document.querySelector('#button');
-//const button = document.getElementById("button");
 button.addEventListener("click", async () => {
   var csvContent = "Name,Url,Description\n";
   csvContent += "Name1,Url1,\"Description1\"\n";
