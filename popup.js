@@ -21,7 +21,6 @@ button.addEventListener("click", async () => {
   // Blob을 생성하여 데이터 URL을 만듭니다.
   const dataBlob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
   const dataUrl = window.URL.createObjectURL(dataBlob);
-
   // chrome.downloads.download를 사용하여 파일을 다운로드합니다.
   const downloadId = await chrome.downloads.download({
     url: dataUrl,
