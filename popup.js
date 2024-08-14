@@ -9,7 +9,10 @@ button.addEventListener("click", async () => {
 
   /*
   const downloadLink = document.createElement("a");
-  const dataBlob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
+  //const dataBlob = new Blob([csvContent], { type: "text/csv;charset=utf-8" }); //엑셀에서 한글 깨짐
+  const BOM = '\uFEFF';
+  const dataBlob = new Blob([BOM + csvContent], { type: "text/csv;charset=utf-8" });
+  //const dataBlob = new Blob([csvContent], { type: "text/csv;charset=EUC-KR" });
   downloadLink.href = window.URL.createObjectURL(dataBlob);
   downloadLink.download = "data.csv";
   downloadLink.style.display = "none";
@@ -19,7 +22,10 @@ button.addEventListener("click", async () => {
   */
   ///*
   // Blob을 생성하여 데이터 URL을 만듭니다.
-  const dataBlob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
+  //const dataBlob = new Blob([csvContent], { type: "text/csv;charset=utf-8" }); //엑셀에서 한글 깨짐
+  const BOM = '\uFEFF';
+  const dataBlob = new Blob([BOM + csvContent], { type: "text/csv;charset=utf-8" });
+  //const dataBlob = new Blob([csvContent], { type: "text/csv;charset=EUC-KR" });
   const dataUrl = window.URL.createObjectURL(dataBlob);
   // chrome.downloads.download를 사용하여 파일을 다운로드합니다.
   const downloadId = await chrome.downloads.download({
