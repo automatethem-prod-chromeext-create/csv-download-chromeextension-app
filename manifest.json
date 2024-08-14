@@ -4,6 +4,9 @@
   "version":"0.0.1",
   "description": "Csv 다운로드 크롬확장 프로그램",
   "author": "Cranberry",
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_popup":"index.html"
   },
