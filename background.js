@@ -8,9 +8,11 @@ const saveCsv = async () => {
     target: { tabId: tab.id },
     args: [],
     function: async () => {
-      //var csvContent = "Name,Url,Code,Leader,MemberCount,Description,RecentPostCount,RecentJoinCount,CreateDate,Invite\n";
-      var csvContent = "밴드 이름,밴드 주소,밴드 코드,리터,회원 수,밴드 설명,최근 새글 수,최근 가입 수,밴드 생성 날짜,초대 가능 여부\n";
-
+      var csvContent = "Name,Url,Description\n";
+      csvContent += "Name1,Url1,\"한글내용1\"\n";
+      csvContent += "Name2,Url2,\"한글내용2\"\n";
+      csvContent += "Name3,Url3,\"한글내용3-1\"\"한글내용3-2\"\"\"\n";
+      
       /*
       //https://github.com/arktiv/table-csv-chrome/blob/master/Download%20table%20as%20CSV/downloadcsv.js#L36C80-L36C94
       const downloadLink = document.createElement("a");
