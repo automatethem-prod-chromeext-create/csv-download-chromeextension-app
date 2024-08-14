@@ -5,7 +5,7 @@
   "description": "Csv 다운로드 크롬확장 프로그램",
   "author": "Cranberry",
   "action": {
-    "default_popup":"popup.html"
+    "default_popup":"index.html"
   },
   "icons": {
     "16": "icon.png",
