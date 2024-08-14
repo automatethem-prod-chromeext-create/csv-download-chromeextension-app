@@ -1,13 +1,15 @@
 console.log("I am background.js");
 
 const saveCsv = async () => {
+  const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+  const tab = tabs[0];
+  
   const [{result: dataUrl}] = await chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    args: [scrollCount],
+    args: [],
     function: async () => {
-      
-      const csvContent = await chrome.runtime.sendMessage({ action: 'getCsvContent' });
-      //console.log(csvContent);
+      //var csvContent = "Name,Url,Code,Leader,MemberCount,Description,RecentPostCount,RecentJoinCount,CreateDate,Invite\n";
+      var csvContent = "밴드 이름,밴드 주소,밴드 코드,리터,회원 수,밴드 설명,최근 새글 수,최근 가입 수,밴드 생성 날짜,초대 가능 여부\n";
 
       /*
       //https://github.com/arktiv/table-csv-chrome/blob/master/Download%20table%20as%20CSV/downloadcsv.js#L36C80-L36C94
@@ -42,7 +44,7 @@ const saveCsv = async () => {
   ///*
   const downloadId = await chrome.downloads.download({
     url: dataUrl,
-    filename: 'outputs/naver-band-data.csv',
+    filename: 'outputs/data.csv',
     //saveAs: true // 파일 저장 대화 상자 표시
   });
   //console.log(downloadId);
