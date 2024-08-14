@@ -1,7 +1,6 @@
 console.log("I am popup.js");
 
-const button = document.querySelector('#button');
-button.addEventListener("click", async () => {
+document.querySelector('#button1').addEventListener("click", async () => {
   var csvContent = "Name,Url,Description\n";
   csvContent += "Name1,Url1,\"한글내용1\"\n";
   csvContent += "Name2,Url2,\"한글내용2\"\n";
@@ -34,4 +33,11 @@ button.addEventListener("click", async () => {
   });
   //console.log(downloadId);
   //*/
+});
+
+document.querySelector('#button2').addEventListener("click", async () => {
+  const response = await chrome.runtime.sendMessage({
+    action: 'saveCsv'
+  });
+  console.log(response);
 });
