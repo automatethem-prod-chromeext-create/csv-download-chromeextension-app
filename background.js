@@ -16,10 +16,9 @@ const saveCsv = async () => {
       /*
       //https://github.com/arktiv/table-csv-chrome/blob/master/Download%20table%20as%20CSV/downloadcsv.js#L36C80-L36C94
       const downloadLink = document.createElement("a");
-      //const dataBlob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
+      //const dataBlob = new Blob([csvContent], { type: "text/csv;charset=utf-8" }); //엑셀에서 한글 깨짐
       const BOM = '\uFEFF';
-      const dataBlob = new Blob([BOM + csvContent], { type: "text/csv;charset=utf-8" }); //엑셀에서 한글 깨짐
-      //const dataBlob = new Blob([csvContent], { type: "text/csv;charset=EUC-KR" });
+      const dataBlob = new Blob([BOM + csvContent], { type: "text/csv;charset=utf-8" }); 
       const dataUrl = window.URL.createObjectURL(dataBlob);
       downloadLink.href = dataUrl;
       downloadLink.download = "outputs/naver-band-data.csv"; //outputs_naver-band-data.csv 로 저장됨
@@ -32,7 +31,6 @@ const saveCsv = async () => {
       //const dataBlob = new Blob([csvContent], { type: "text/csv;charset=utf-8" }); //엑셀에서 한글 깨짐
       const BOM = '\uFEFF';
       const dataBlob = new Blob([BOM + csvContent], { type: "text/csv;charset=utf-8" });
-      //const dataBlob = new Blob([csvContent], { type: "text/csv;charset=EUC-KR" });
       const dataUrl = window.URL.createObjectURL(dataBlob);
       console.log(dataUrl);
       //*/
