@@ -21,7 +21,6 @@ button.addEventListener("click", async () => {
   document.body.removeChild(downloadLink);
   */
   ///*
-  // Blob을 생성하여 데이터 URL을 만듭니다.
   //const dataBlob = new Blob([csvContent], { type: "text/csv;charset=utf-8" }); //엑셀에서 한글 깨짐
   const BOM = '\uFEFF';
   const dataBlob = new Blob([BOM + csvContent], { type: "text/csv;charset=utf-8" });
